@@ -35,9 +35,16 @@ const LoginForm = ({ onLoginSuccess }: LoginFormProps) => {
         }
 
         // Redirect based on role
-        if (data.user.role === "ngo") navigate("/volunteer-dashboard");
-        else if (data.user.role === "admin") navigate("/admin");
-        else navigate("/");
+        if (data.user.role === "ngo") {
+          navigate("/volunteer-dashboard");
+        } else if (data.user.role === "admin") {
+          navigate("/admin");
+        } else {
+          navigate("/");
+        }
+
+        // Force page reload to ensure clean state
+        window.location.reload();
       } else {
         alert("Login failed: " + data.message);
       }
