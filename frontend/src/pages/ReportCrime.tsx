@@ -43,7 +43,8 @@ import {
 import ReportCrimeForm from "@/components/ReportCrimeForm";
 import { Input } from "@/components/ui/input";
 
-const API_URL = "http://localhost:5000/api/reports";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/reports`;
+
 
 const ReportCrime = () => {
   const [reports, setReports] = useState<any[]>([]);
