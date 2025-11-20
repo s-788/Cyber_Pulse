@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  CyberPulse - WhizGuard Inspired Theme
+  Color Palette: Dark, tech-centric with neon blue accents.
+  Typography: Clean, modern sans-serif.
+  Background: Subtle tech patterns.
+*/
+
+@layer base {
+  :root {
+    /* Modern Light Theme - Cyber Blue Inspired */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.5rem;
+
+    /* Custom WhizGuard colors for light theme */
+    --whiz-primary: 199 89% 48%;
+    --whiz-secondary: 210 40% 85%;
+    --whiz-dark: 222 47% 11%;
+    --whiz-light: 0 0% 100%;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', sans-serif;
+    /* Subtle dotted grid background */
+    background-image: radial-gradient(hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  /* Light theme enhancements */
+  :root:not(.dark) {
+    body {
+      background: linear-gradient(135deg, hsl(210, 40%, 98%) 0%, hsl(199, 89%, 98%) 100%);
+      background-attachment: fixed;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 { @apply text-4xl lg:text-5xl; }
+  h2 { @apply text-3xl lg:text-4xl; }
+  h3 { @apply text-2xl lg:text-3xl; }
+}
+
+@layer components {
+  /* Custom component styles can go here */
+  .glowing-border {
+    @apply border border-transparent;
+    box-shadow: 0 0 2px hsl(var(--primary) / 0.5), 0 0 5px hsl(var(--primary) / 0.3);
+  }
+
+  .btn-cyber {
+    @apply bg-primary text-primary-foreground font-bold py-2 px-4 rounded-lg;
+    transition: all 0.3s ease;
+  }
+  .btn-cyber:hover {
+    @apply bg-primary/90;
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.5);
+  }
+
+  /* Light theme card enhancements */
+  :root:not(.dark) .bg-whiz-dark\/80,
+  :root:not(.dark) .bg-whiz-dark\/60,
+  :root:not(.dark) .bg-whiz-dark\/50 {
+    @apply bg-white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06),
+                0 0 0 1px rgba(0, 194, 255, 0.1);
+  }
+
+  :root:not(.dark) .bg-whiz-dark {
+    @apply bg-gradient-to-br from-blue-50 to-cyan-50;
+  }
+
+  :root:not(.dark) .text-whiz-light {
+    @apply text-gray-900;
+  }
+
+  :root:not(.dark) .text-whiz-primary {
+    color: hsl(199, 89%, 48%);
+  }
+
+  :root:not(.dark) .border-whiz-secondary\/30,
+  :root:not(.dark) .border-whiz-secondary\/50 {
+    @apply border-gray-200;
+  }
+
+  /* Light theme input and button styles */
+  :root:not(.dark) .bg-whiz-dark.border-whiz-secondary\/50,
+  :root:not(.dark) input.bg-whiz-dark,
+  :root:not(.dark) textarea.bg-whiz-dark,
+  :root:not(.dark) select.bg-whiz-dark {
+    @apply bg-white border-gray-300;
+  }
+
+  :root:not(.dark) .hover\:bg-whiz-primary\/10:hover {
+    @apply bg-cyan-50;
+  }
+
+  :root:not(.dark) .bg-whiz-primary\/10 {
+    @apply bg-cyan-50;
+  }
+
+  :root:not(.dark) .bg-whiz-primary\/20 {
+    @apply bg-cyan-100;
+  }
+
+  /* Navbar in light mode */
+  :root:not(.dark) nav {
+    @apply bg-white/95;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* Floating button in light mode */
+  :root:not(.dark) .fixed.bottom-8.right-8 {
+    box-shadow: 0 10px 25px -5px rgba(0, 194, 255, 0.3),
+                0 8px 10px -6px rgba(0, 194, 255, 0.2);
+  }
+
+  /* Table styling for light mode */
+  :root:not(.dark) .hover\:bg-whiz-dark\/50:hover {
+    @apply bg-gray-50;
+  }
+
+  :root:not(.dark) .border-whiz-secondary\/30 {
+    @apply border-gray-200;
+  }
+
+  /* Muted text in light mode */
+  :root:not(.dark) .text-muted-foreground {
+    @apply text-gray-600;
+  }
+
+  /* Badge colors in light mode */
+  :root:not(.dark) .bg-green-500\/20 {
+    @apply bg-green-100;
+  }
+
+  :root:not(.dark) .text-green-400 {
+    @apply text-green-600;
+  }
+
+  :root:not(.dark) .bg-red-500\/20 {
+    @apply bg-red-100;
+  }
+
+  :root:not(.dark) .text-red-400 {
+    @apply text-red-600;
+  }
+
+  :root:not(.dark) .bg-amber-500\/20 {
+    @apply bg-amber-100;
+  }
+
+  :root:not(.dark) .text-amber-400 {
+    @apply text-amber-600;
+  }
+
+  :root:not(.dark) .text-amber-500 {
+    @apply text-amber-600;
+  }
+
+  :root:not(.dark) .text-red-500 {
+    @apply text-red-600;
+  }
+
+  /* Dialog styling for light mode */
+  :root:not(.dark) .bg-whiz-dark.border-whiz-secondary\/30 {
+    @apply bg-white border-gray-200;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Stat cards hover effect in light mode */
+  :root:not(.dark) .glowing-border {
+    box-shadow: 0 4px 6px -1px rgba(0, 194, 255, 0.15),
+                0 2px 4px -1px rgba(0, 194, 255, 0.1);
+  }
+
+  :root:not(.dark) .glowing-border:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 194, 255, 0.2),
+                0 4px 6px -2px rgba(0, 194, 255, 0.15);
+  }
+}
