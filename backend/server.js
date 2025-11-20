@@ -23,7 +23,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // ✅ Middlewares
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'https://cyberpulse-tau.vercel.app',
+    'http://localhost:8080',
+    'http://localhost:5173'
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 

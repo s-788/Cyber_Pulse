@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShieldCheck, Search, BookOpen, BarChart, AlertTriangle } from "lucide-react";
 
 // Using a cybersecurity-themed background - Digital Security & Network
-const heroImage = "./src/assets/Cyber.jpg";
+const heroImage = "/Cyber.jpg";
 
 const Home = () => {
   return (

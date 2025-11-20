@@ -79,7 +79,7 @@ const AboutUs = () => {
               location="Coimbatore, India"
               roleTag="Dev"
               focus="Full Stack"
-              image="./src/assets/Shrinidhi.jpg"
+              image="/Shrinidhi.jpg"
             />
             <TeamMemberCard
               name="Archa Biju"
@@ -88,7 +88,7 @@ const AboutUs = () => {
               location="Coimbatore, India"
               roleTag="Dev"
               focus="Full Stack"
-              image="./src/assets/Archa.jpg"
+              image="/Archa.jpg"
             />
             <TeamMemberCard
               name="Vrinda Pillai"
@@ -97,7 +97,7 @@ const AboutUs = () => {
               location="Coimbatore, India"
               roleTag="Dev"
               focus="Full Stack"
-              image="./src/assets/vrinda.jpg"
+              image="/vrinda.jpg"
             />
           </div>
         </section>
