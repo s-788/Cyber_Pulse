@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 
 // Lazy load components for better performance
 const Home = lazy(() => import("./pages/Home"));
+const Login = lazy(() => import("./pages/Login"));
+const Signup = lazy(() => import("./pages/Signup"));
 const ReportCrime = lazy(() => import("./pages/ReportCrime"));
 const CheckMisinformation = lazy(() => import("./pages/CheckMisinformation"));
 const Awareness = lazy(() => import("./pages/Awareness"));
@@ -41,6 +43,8 @@ const App = () => (
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
                 <Route path="/report-crime" element={<ReportCrime />} />
                 <Route path="/check-misinformation" element={<CheckMisinformation />} />
                 <Route path="/awareness" element={<Awareness />} />
